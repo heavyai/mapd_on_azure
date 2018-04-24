@@ -1,3 +1,17 @@
+#  Copyright 2018 MapD Technologies, Inc.
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
 # Login using Azure CLI tools
 # Install locally: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
 # This is necessary to run locally, but not part of automated script
@@ -10,6 +24,7 @@
 
 # Create resource group
 # Putting all resources in same group allows for deleting with single command later
+#
 az group create --name MapDAzure --location eastus
 
 # Create network security group and open necessary ports
@@ -50,6 +65,7 @@ az network nic create \
 # Create VM
 # Assumes you already have SSH key created at location ~/.ssh/id_rsa.pub
 # Standard_NC6: 1 GPU, Standard_NC12: 2 GPUs, Standard_NC24: 4 GPUs
+#
 az vm create --resource-group MapDAzure \
   --name MapDCE \
   --location eastus \
@@ -63,6 +79,7 @@ az vm create --resource-group MapDAzure \
 
 # Add disks...by default, UbuntuLTS starts up as 30GB
 # Two disks added here, can modify to size required for data
+#
 az vm disk attach --resource-group MapDAzure \
  --vm-name MapDCE \
  --disk MapDAzure_disk1 \
