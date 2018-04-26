@@ -1,7 +1,6 @@
 # Installing MapD Community Edition on Microsoft Azure
----
 
-This repository contains scripts that can be used to install [MapD Community Edition](https://www.mapd.com/platform/download-community/) on Microsoft Azure. 
+This repository contains scripts that can be used to install [MapD Community Edition](https://www.mapd.com/platform/download-community/) on Microsoft Azure.
 
 ## Getting Started
 
@@ -24,7 +23,7 @@ The script [AzureVMcreate.sh](https://github.com/mapd/mapd_on_azure/blob/master/
 | ------------- | ------------- |
 | GPU  | 1/2 NVIDIA Tesla K80  |
 | RAM  | 56GB |
-| SSD      | 3 disks, 1.3TB     |
+| SSD      | ~1TB     |
 
 These values are just a suggestion to get started with; adding more GPUs/RAM/SSD will depend on desired performance and the size of datasets you plan to analyze.
 
