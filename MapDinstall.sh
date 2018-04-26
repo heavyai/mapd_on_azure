@@ -29,7 +29,7 @@ sudo add-apt-repository \
    stable"
 
 sudo apt-get update
-sudo apt-get install -y docker-ce
+sudo apt-get install -y docker-ce=18.03.0~ce-0~ubuntu
 sudo usermod -aG docker $USER
 
 # Install nvidia-docker
