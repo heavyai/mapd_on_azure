@@ -78,25 +78,6 @@ az vm create --resource-group MapDAzure \
   --storage-sku Standard_LRS \
   --verbose
 
-# Add disks...by default, UbuntuLTS starts up as 30GB
-# Two disks added here, can modify to size required for data
-#
-# az vm disk attach --resource-group MapDAzure \
-#  --vm-name MapDCE \
-#  --disk MapDAzure_disk1 \
-#  --new \
-#  --caching ReadWrite \
-#  --size-gb 512 \
-#  --sku Standard_LRS
-#
-#  az vm disk attach --resource-group MapDAzure \
-#   --vm-name MapDCE \
-#   --disk MapDAzure_disk2 \
-#   --new \
-#   --caching ReadWrite \
-#   --size-gb 512 \
-#   --sku Standard_LRS
-
 pubip=$( az vm show --show-details --resource-group MapDAzure --name MapDCE --query publicIps -otsv )
 echo "Congratulations! You have created an Azure VM with the public IP: $pubip"
 
